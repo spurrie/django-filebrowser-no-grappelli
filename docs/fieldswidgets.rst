@@ -15,7 +15,7 @@ FileBrowseField
 
 .. class:: FileBrowseField(max_length[, site, directory, extensions, format, **options])
 
-    A subclass of `CharField <https://docs.djangoproject.com/en/1.8/ref/models/fields/#charfield>`_, referencing a media file within.
+    A subclass of `CharField <https://docs.djangoproject.com/en/1.9/ref/models/fields/#charfield>`_, referencing a media file within.
     Returns a :ref:`fileobject`.
 
     :param site: A FileBrowser site (defaults to the main site), see :ref:`site`.
@@ -79,48 +79,10 @@ Just add these lines to your `ModelAdmin asset definitions <https://docs.djangop
         js = ['/path/to/tinymce/jscripts/tiny_mce/tiny_mce.js',
               '/path/to/your/tinymce_setup.js']
 
-.. _fileinputwidget:
-
-FileInput
----------
-
-Subclass of `FileInput <https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#fileinput>`_ with an additional thumbnail:
-
-.. code-block:: python
-
-    from filebrowser.widgets import FileInput
-
-    class BlogEntryOptions(admin.ModelAdmin):
-        formfield_overrides = {
-            models.ImageField: {'widget': FileInput},
-        }
-
-.. warning::
-    Will be removed with 3.7.
-
-.. _clearablefileinputwidget:
-
-ClearableFileInput
-------------------
-
-Subclass of `ClearableFileInput <https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#clearablefileinput>`_ with an additional thumbnail:
-
-.. code-block:: python
-
-    from filebrowser.widgets import ClearableFileInput
-
-    class BlogEntryOptions(admin.ModelAdmin):
-        formfield_overrides = {
-            models.ImageField: {'widget': ClearableFileInput},
-        }
-
-.. warning::
-    Will be removed with 3.7.
-
 Django FileField and the FileBrowser
 ------------------------------------
 
-Return a :ref:`fileobject` from a `FileField <https://docs.djangoproject.com/en/1.8/ref/models/fields/#filefield>`_ or `ImageField <https://docs.djangoproject.com/en/1.8/ref/models/fields/#imagefield>`_ with:
+Return a :ref:`fileobject` from a `FileField <https://docs.djangoproject.com/en/1.9/ref/models/fields/#filefield>`_ or `ImageField <https://docs.djangoproject.com/en/1.9/ref/models/fields/#imagefield>`_ with:
 
 .. code-block:: python
 
